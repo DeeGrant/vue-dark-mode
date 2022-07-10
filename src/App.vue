@@ -1,11 +1,13 @@
 <template>
   <div class="app" :class="mode">
     <header-comp :mode="mode" @toggle="toggle"></header-comp>
+    <content-comp :mode="mode"></content-comp>
   </div>
 </template>
 
 <script>
 import HeaderComp from "@/components/HeaderComp";
+import ContentComp from "@/components/ContentComp";
 
 export default {
   name: 'App',
@@ -15,6 +17,7 @@ export default {
     }
   },
   components: {
+    ContentComp,
     HeaderComp
   },
   methods: {
@@ -47,7 +50,7 @@ export default {
 
 .dark {
   background-color: #192734;
-  color: #f3f3f3;
+  color: #bdbdbd;
 }
 
 /*#app {*/
