@@ -20,7 +20,15 @@ export default {
     ContentComp,
     HeaderComp
   },
+  created() {
+    window.addEventListener('keyup', this.keyPress)
+  },
   methods: {
+    keyPress (e) {
+      if (e.key === 't') {
+        this.toggle()
+      }
+    },
     toggle() {
       if(this.mode === 'dark') {
         this.mode = 'light'
@@ -53,12 +61,4 @@ export default {
   color: #bdbdbd;
 }
 
-/*#app {*/
-/*  font-family: Avenir, Helvetica, Arial, sans-serif;*/
-/*  -webkit-font-smoothing: antialiased;*/
-/*  -moz-osx-font-smoothing: grayscale;*/
-/*  text-align: center;*/
-/*  color: #2c3e50;*/
-/*  margin-top: 60px;*/
-/*}*/
 </style>
